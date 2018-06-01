@@ -12,5 +12,6 @@ class Principal_worker extends CI_Controller{
 		$this->load->view('principal_worker');
 		$this->load->view('parts/footer');
 	}
+	
 }
 
