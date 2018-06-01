@@ -2,10 +2,7 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>ZOLID LOGIN</title>
-    <!-- SWEET ALERT -->
-    <link rel="stylesheet" href="<?= base_url('assets/plugins/sweetalert-master/dist/sweetalert.css'); ?>" />
-    <script type="text/javascript" src="<?= base_url('assets/plugins/sweetalert-master/dist/sweetalert.min.js'); ?>"></script>
+    <title>LOGIN ZOLID</title>
     <!-- ICONO PAGINA -->
     <link rel="icon" href="http://cellaron.com/media/wysiwyg/zte-mwc-2015-8-l-124x124.png">
     <!-- ANIMACION LOGIN -->
@@ -13,7 +10,9 @@
     <!-- CSS ESTILOS LOGIN -->
     <link rel="stylesheet" href="<?= base_url('assets/css/login/stylelogin.css'); ?>">
     <!-- JQUERY -->
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="<?= base_url('assets/plugins/jquery/jquery.min.js');?>"></script>
+    <!-- SWEET ALERT -->
+    <script type="text/javascript" src="<?= base_url('assets/plugins/sweet-alert/sweetalert.min.js'); ?>"></script>
 
   </head>
   <body>
@@ -42,11 +41,22 @@
       </form>
     </div>
 
-    <?php if (isset($error)): ?>
-      <script> swan("error", "credenciales incorrectas", "error"); </script>
+    <?php if (isset($mensaje)): ?>
+      <script> swal("ERROR!","Credenciales incorrectas!","info",);  </script>
     <?php endif ?>
 
-    ANIMACION DE LOGIN
-    <script src="<?= base_url('assets/js/index.js?v=1.2'); ?>"></script>
+    <!-- ANIMACION DE LOGIN -->
+    <script>
+      $(function () {
+        $("#valid").click(function () {
+          var username = document.getElementById("username").value;
+          var pass     = document.getElementById("password").value;
+          if (username != "" && pass != "") {
+            $(".admin").addClass("up").delay(100).fadeOut(100);
+            $(".cms").addClass("down").delay(150).fadeOut(100);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
