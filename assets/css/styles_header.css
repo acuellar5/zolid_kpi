@@ -1,14 +1,8 @@
-.menu_nav_header{
+.kpi_header .menu_nav_header{
 	background: #15344e;
-	color: black !important;
 }
-.home{
-	background: #15344e !important;
-	color: white !important;
+.kpi_header .home{
+	background: #0808085c !important;
 }
-.logoNav{
-	margin: -4px 0px 0px 0px;
-}
-.page {
-	color: white !important;
-}
+
+

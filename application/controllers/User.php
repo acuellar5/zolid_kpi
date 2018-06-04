@@ -6,6 +6,7 @@ class User extends CI_Controller {
   function __construct() {
     parent::__construct();
     $this->load->model('data/Dao_user_model');
+
     // $this->load->model('data/Dao_user_model');
     //->load->model('data/configdb_model');
   }
@@ -19,10 +20,9 @@ class User extends CI_Controller {
     if ($val_user != null) {
       $val_pass = $this->Dao_user_model->validatePass($pass);
       if ($val_pass != null) {
-        $role = ($val_user->K_ID_ROLE == 2) ? 'EN' : 'ES';
         $data = array(
           'lang' => $lang,
-          'role' => $role,
+          'role' => $val_user->K_ID_ROLE,
           'id'   => $val_user->K_ID_DOCUMENT,
           'name' => $val_user->N_NAME . " " . $val_user->N_LAST_NAME          
         );
@@ -43,24 +43,32 @@ class User extends CI_Controller {
 
   // Redirige a alguna vista principal dependiendo el roll del usuario logueado
   public function principal($role){
+    //Cargo el lenguale seleccionado por el usuario 
+    $this->lang->load('header',$this->session->lang);
 
-   if ($role == 1) {
-     echo "admin<br>";
-     print_r($this->session->userdata('role'));
-     // $this->load->view('principal_admin');
-   } else if ($role == 2) {
-     echo "obrero<br>";
-     print_r($this->session->userdata('role'));
-     // $this->load->view('principal_worker');
-
-
- // backend para informacion y enviar calificado o calificador
+    $data['title'] = 'principal';
+    $this->load->view('parts/header', $data);
+    if ($role == 1) {
+      $this->load->view('principal_administrative');
+    } else if ($role == 2) {
 
 
-   }
+
+      // backend para informacion y enviar calificado o calificador
+
+
+      $this->load->view('principal_worker');
+    }
+      $this->load->view('parts/footer');
 
   }
-  
+
+  //destruye la sesion
+  public function logOut(){
+    $this->session->sess_destroy();
+    redirect(base_url());
+  }
+
   
 }
 ?>

@@ -16,6 +16,10 @@
 
   </head>
   <body>
+    <?php if ($this->session->userdata('id')) {
+      $this->session->sess_destroy();
+    }
+    ?>
     <div id="warp">
       <H2></H2>
       <form id="formu" method="post">
@@ -25,8 +29,8 @@
             <input id="username" type="text" name="username" value="" placeholder="Username" required/><br/>
             <input id="password" type="password" name="password" value="" placeholder="Password" required/>            
              <select id="language" type="text" name="language" class="sel_login">
-             <option value="ES" />Español</option>
-             <option value="EN" />English</option>
+             <option value="spanish" />Español</option>
+             <option value="english" />English</option>
            </select>
                         
           </div>
@@ -34,7 +38,7 @@
         <div class="cms">
           <div class="roti">
             <h1>ZTE</h1>
-            <button type="submit" class="button" id="valid" name="valid" onclick = "this.form.action = '<?php echo base_url();?>/User/loginUser'">Login</button><br />
+            <button type="submit" class="button" id="valid" name="valid" onclick = "this.form.action = '<?php echo base_url();?>principal'">Login</button><br />
             <p><a href="#">ZTE</a> <a>And</a> <a href="#">ZTE Colombia</a></p>
           </div>
         </div>
