@@ -3,28 +3,40 @@
 			<div class="grid">
 				<!--   PERSON MODAL    -->
 				<figure class="effect-oscar"> 
-					<img src="<?= base_url('assets/images/1.jpg') ?>" />
+					<img src="<?= base_url('assets/images/people (Copiar).jpg') ?>" />
 					<figcaption>
-						<h2>Modulo <span>Proyecto</span></h2>
-						<p>Asignacion.</p>
+						<h2>Modulo <br><span>Persona</span></h2><br>					
+						<p>Registrar</p>
+						<p>Modificar</p>
+						<p>Desactivar</p>
+						<p>Asignación de KPI'S</p>
+						<p>Inasistencia</p>
+						<p>Informes</p>
 						<a href="#">View more</a>
 					</figcaption>			
 				</figure>
 				<!--   PROJECT MODAL    -->
 				<figure class="effect-oscar">
-					<img src="https://tympanus.net/Development/HoverEffectIdeas/img/8.jpg" alt="img08"/>
+						<img src="<?= base_url('assets/images/project.jpg') ?>" />
 					<figcaption>
-						<h2>Warm <span>Oscar</span></h2>
-						<p>Oscar is a decent man. He used to clean porches with pleasure.</p>
+						<h2>Modulo <span>Proyecto</span></h2><br>
+						<p>Registrar</p>
+						<p>Modificar</p>
+						<p>Desactivar</p>
+						<p>Método de cálculo</p>
 						<a href="#">View more</a>
 					</figcaption>			
 				</figure>
 				<!--   KPI MODAL    -->
 				<figure class="effect-oscar">
-					<img src="https://tympanus.net/Development/HoverEffectIdeas/img/8.jpg" alt="img08"/>
+					<img src="<?= base_url('assets/images/Kpi1 (Copiar).jpg') ?>" />
 					<figcaption>
-						<h2>Warm <span>Oscar</span></h2>
-						<p>Oscar is a decent man. He used to clean porches with pleasure.</p>
+						<h2>Modulo  <br><span>KPI'S</span></h2><br>
+						<p>Registrar</p>
+						<p>Modificar</p>
+						<p>Desactivar</p>
+						<p>Ventana de tiempo</p>
+						<p>Informes</p>
 						<a href="#">View more</a>
 					</figcaption>			
 				</figure> 
