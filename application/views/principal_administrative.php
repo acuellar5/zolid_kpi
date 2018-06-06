@@ -5,9 +5,9 @@
 				<figure class="effect-oscar"> 
 					<img src="<?= base_url('assets/images/1.jpg') ?>" />
 					<figcaption>
-						<h2>Modulo <span>Proyecto</span></h2>
-						<p>Asignacion.</p>
-						<a href="#">View more</a>
+						<h2><?= $this->lang->line('principal_module') ?> <span> <?= $this->lang->line('principal_module1') ?></span></h2>
+						<p></p>
+						<a href="<?= base_url('person') ?>">View more</a> 
 					</figcaption>			
 				</figure>
 				<!--   PROJECT MODAL    -->

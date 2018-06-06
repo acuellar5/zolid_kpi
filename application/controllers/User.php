@@ -6,6 +6,8 @@ class User extends CI_Controller {
   function __construct() {
     parent::__construct();
     $this->load->model('data/Dao_user_model');
+    //Cargo el lenguale seleccionado por el usuario 
+    $this->lang->load('header',$this->session->lang);
 
     // $this->load->model('data/Dao_user_model');
     //->load->model('data/configdb_model');
@@ -49,6 +51,7 @@ class User extends CI_Controller {
     $data['title'] = 'principal';
     $this->load->view('parts/header', $data);
     if ($role == 1) {
+      $this->lang->load('principal_administrative',$this->session->lang);
       $this->load->view('principal_administrative');
     } else if ($role == 2) {
 
@@ -69,6 +72,20 @@ class User extends CI_Controller {
     redirect(base_url());
   }
 
-  
+  //carga la vista de modulo de persona
+  public function v_modulo_person(){
+    $this->lang->load('header',$this->session->lang);
+    $this->lang->load('modulo_person',$this->session->lang);
+    $data['title'] = 'Persona';
+
+    $data['information'] = $this->Dao_user_model->m_load_data_person();
+
+    
+    $this->load->view('parts/header', $data);
+    $this->load->view('modulo_person');
+    $this->load->view('parts/footer');
+  }
+
+
+
 }
-?>
