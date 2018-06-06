@@ -13,6 +13,10 @@
 						<p>Inasistencia</p>
 						<p>Informes</p>
 						<a href="#">View more</a>
+						<h2><?= $this->lang->line('principal_module') ?> <span> <?= $this->lang->line('principal_module1') ?></span></h2>
+						<p></p>
+						<a href="<?= base_url('person') ?>">View more</a> 
+
 					</figcaption>			
 				</figure>
 				<!--   PROJECT MODAL    -->

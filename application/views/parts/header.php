@@ -11,12 +11,14 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- STYLES MODULES PRINCIPAL ADMIN -->
 		<?php if ($this->uri->segment(1) == 'principal'): ?>
-			<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_principal_administrative.css'); ?>">			
+			<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_principal_administrative.css'); ?>">
 		<?php endif ?>
-
-		
 		<!--   ICONO PAGINA    -->
 		<link rel="icon" href="http://cellaron.com/media/wysiwyg/zte-mwc-2015-8-l-124x124.png">
+		<!-- CSS DATATABLES  -->
+		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap.min.css') ?>">
+		<!-- CSS BUTTONS_PERSON -->
+		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_modulo_person.css') ?>">
 	</head>
 	<body>
 		<div class="kpi_header">
@@ -29,7 +31,7 @@
 
 					</div>
 					<ul class="nav navbar-nav">
-						<li class="active"><a class="home" href="#"><?= $this->lang->line('header_home') ?></a></li>
+						<li class="active"><a class="home" href="#"><?= $this->lang->line('header_home'); ?></a></li>
 						<li><a class="page" href="#"><?= $this->lang->line('header_page1') ?></a></li>
 						<li><a class="page" href="#"><?= $this->lang->line('header_page2') ?></a></li>
 					</ul>
