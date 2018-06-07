@@ -13,7 +13,6 @@
 						<p>Inasistencia</p>
 						<p>Informes</p>
 						<a href="#">View more</a>
-						<h2><?= $this->lang->line('principal_module') ?> <span> <?= $this->lang->line('principal_module1') ?></span></h2>
 						<p></p>
 						<a href="<?= base_url('person') ?>">View more</a> 
 
@@ -28,7 +27,7 @@
 						<p>Modificar</p>
 						<p>Desactivar</p>
 						<p>Método de cálculo</p>
-						<a href="#">View more</a>
+						<a href="<?= base_url('project') ?>">View more</a>
 					</figcaption>			
 				</figure>
 				<!--   KPI MODAL    -->
