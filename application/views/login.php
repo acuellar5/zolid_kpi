@@ -28,11 +28,15 @@
             <h1>ZOLID</h1>
             <input id="username" type="text" name="username" value="" placeholder="Username" required/><br/>
             <input id="password" type="password" name="password" value="" placeholder="Password" required/>            
-             <select id="language" type="text" name="language" class="sel_login">
-             <option value="spanish" />Español</option>
-             <option value="english" />English</option>
-           </select>
-                        
+              <div class="form_radio">
+                <input type="radio" id="espanol"
+                 name="language" value="spanish" checked>
+                <label for="espanol">Español</label>
+                &nbsp;
+                <input type="radio" id="english"
+                 name="language" value="english">
+                <label for="english">English</label>
+              </div>  
           </div>
         </div>
         <div class="cms">
@@ -46,7 +50,7 @@
     </div>
 
     <?php if (isset($mensaje)): ?>
-      <script> swal("ERROR!","Credenciales incorrectas!","info",);  </script>
+      <script> swal("ERROR!","incorrect credentials!","info",);  </script>
     <?php endif ?>
 
     <!-- ANIMACION DE LOGIN -->

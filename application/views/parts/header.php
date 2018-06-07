@@ -31,7 +31,7 @@
 
 					</div>
 					<ul class="nav navbar-nav">
-						<li class="active"><a class="home" href="#"><?= $this->lang->line('header_home') ?></a></li>
+						<li class="active"><a class="home" href="#"><?= $this->lang->line('header_home'); ?></a></li>
 						<li><a class="page" href="#"><?= $this->lang->line('header_page1') ?></a></li>
 						<li><a class="page" href="#"><?= $this->lang->line('header_page2') ?></a></li>
 					</ul>

@@ -59,7 +59,7 @@ class User extends CI_Controller {
 
       // backend para informacion y enviar calificado o calificador
 
-
+      $this->lang->load('principal_worker',$this->session->lang);
       $this->load->view('principal_worker');
     }
       $this->load->view('parts/footer');
