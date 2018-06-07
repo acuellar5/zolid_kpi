@@ -1,5 +1,5 @@
 <div class="footer">
-	<p>Footer</p>
+	<p>©1998-2018 ZTE Corporation - ZTE Colombia. All rights reserved</p>
 </div>
 <!-- scripts del footer -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

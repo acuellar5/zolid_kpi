@@ -85,7 +85,23 @@ class User extends CI_Controller {
     $this->load->view('modulo_person');
     $this->load->view('parts/footer');
   }
-
-
-
+  //insertar nuevas personas en el modulo de persona
+  public function insert_new_user(){
+    $data = array(
+        'K_ID_DOCUMENT' => $this->input->post('K_ID_DOCUMENT'),
+        'N_NAME' => $this->input->post('N_NAME'),
+        'N_LAST_NAME' => $this->input->post('N_LAST_NAME'),
+        'D_START_DAY' => $this->input->post('D_START_DAY'),
+        'D_TIME_WORKED' => $this->input->post('D_TIME_WORKED'),
+        'I_TRIAL_PERIOD' => $this->input->post('I_TRIAL_PERIOD'),
+        'K_ID_POSITION' => $this->input->post('K_ID_POSITION'),
+        'K_ID_PROJECT' => $this->input->post('K_ID_PROJECT'),
+        'K_ID_ROLE' => 2,
+      );
+    $data2 = array(
+      );
+    $this->Dao_user_model->new_person($data);
+    $this->v_modulo_person();
+  }
+  
 }

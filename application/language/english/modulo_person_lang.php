@@ -8,6 +8,7 @@ $lang['person_trial_time'] = 'Trial time';
 $lang['person_position'] = 'Position';
 $lang['person_project'] = 'Project';
 $lang['person_calculate_method'] = 'Calculate method';
+$lang['person_role'] = 'Role';
 $lang['person_add'] = 'Add';
 $lang['person_desactivate'] = 'Desactivate';
 $lang['person_mod_person'] = 'Modify';
