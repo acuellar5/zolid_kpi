@@ -1,7 +1,7 @@
-<ul class="nav nav-tabs navCami">
-	<li class="li_Matriz active"><a data-toggle="tab" href="#historial_kpi"><?= $this->lang->line('historial_kpi'); ?></a></li>
-	<li class="li_Servicios"><a data-toggle="tab" href="#calificar_kpi"><?= $this->lang->line('calificar_kpi'); ?></a></li>
-	<li class="li_Procesos"><a data-toggle="tab" href="#certificado"><?= $this->lang->line('certificado'); ?></a></li>
+<ul class="nav nav-tabs">
+	<li class="active"><a data-toggle="tab" href="#historial_kpi"><?= $this->lang->line('historial_kpi'); ?></a></li>
+	<li class=""><a data-toggle="tab" href="#calificar_kpi"><?= $this->lang->line('calificar_kpi'); ?></a></li>
+	<li class=""><a data-toggle="tab" href="#certificado"><?= $this->lang->line('certificado'); ?></a></li>
 </ul>
 
 <div class="tab-content">

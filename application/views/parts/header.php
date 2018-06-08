@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<title><?php echo $title ?></title>
 		<meta charset="utf-8">
@@ -8,14 +8,13 @@
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_footer.css'); ?>">
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_header.css'); ?>">
 		<!-- BOOTSTRAP -->
-		<!-- <link rel="stylesheet" type="text/css" href="<?= base_url('assets/plugins/Bosstrap/css/bootstrap.min.css'); ?>"> -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?= base_url('assets/plugins/Bootstrap/css/bootstrap3.3.7.min.css'); ?>">
 		<!-- STYLES MODULES PRINCIPAL ADMIN -->
 		<?php if ($this->uri->segment(1) == 'principal'): ?>
 			<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_principal_administrative.css'); ?>">
 		<?php endif ?>
 		<!--   ICONO PAGINA    -->
-		<link rel="icon" href="http://cellaron.com/media/wysiwyg/zte-mwc-2015-8-l-124x124.png">
+		<link rel="icon" href="<?= base_url('assets/images/title_icon.png'); ?>">
 		<!-- CSS DATATABLES  -->
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap.min.css') ?>">
 		<!-- CSS BUTTONS_PERSON -->
