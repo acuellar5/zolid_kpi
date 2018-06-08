@@ -10,12 +10,20 @@
 <?php if ($this->uri->segment(1) == 'project'): ?>
 	<script src="<?= base_url('assets/js/project.js')?>"></script>	
 <?php endif ?>
+<!-- ************************************vista person ***********************************-->
+<script> var baseurl = "<?php echo base_url(); ?>";</script>
+<?php if ($this->uri->segment(1) == 'person'): ?>
+	<script> var lenguage = [
+								"<?= $this->lang->line('person_title_modals_edit') ?>",
+								"<?= $this->lang->line('person_title_modals') ?>",
+								"<?= $this->lang->line('person_title_edit_modals') ?>",
+								"<?= $this->lang->line('person_title_add_modals') ?>"
+								
 
-<script>
-$(document).ready(function() {
-    $('.mdb-select').material_select();
-});
-</script>
+							] 
+	</script>
+	<script src="<?= base_url('assets/js/person.js')?>"></script>	
+<?php endif ?>
 
 
 </body>

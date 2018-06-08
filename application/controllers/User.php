@@ -92,16 +92,39 @@ class User extends CI_Controller {
         'N_NAME' => $this->input->post('N_NAME'),
         'N_LAST_NAME' => $this->input->post('N_LAST_NAME'),
         'D_START_DAY' => $this->input->post('D_START_DAY'),
-        'D_TIME_WORKED' => $this->input->post('D_TIME_WORKED'),
-        'I_TRIAL_PERIOD' => $this->input->post('I_TRIAL_PERIOD'),
+        'I_TIME_WORKED' => $this->input->post('I_TIME_WORKED'),
+        'D_TRIAL_PERIOD' => $this->input->post('D_TRIAL_PERIOD'),
         'K_ID_POSITION' => $this->input->post('K_ID_POSITION'),
         'K_ID_PROJECT' => $this->input->post('K_ID_PROJECT'),
         'K_ID_ROLE' => 2,
       );
-    $data2 = array(
-      );
     $this->Dao_user_model->new_person($data);
     $this->v_modulo_person();
+  }
+
+  //actualizar datos en el modulo person  
+  public function update_user(){
+    $data = array(
+      'K_ID_DOCUMENT' => $this->input->post('K_ID_DOCUMENT'),
+      'N_NAME' => $this->input->post('N_NAME'),
+      'N_LAST_NAME' => $this->input->post('N_LAST_NAME'),
+      'D_START_DAY' => $this->input->post('D_START_DAY'),
+      'I_TIME_WORKED' => $this->input->post('I_TIME_WORKED'),
+      'D_TRIAL_PERIOD' => $this->input->post('D_TRIAL_PERIOD'),
+    );
+    $data2 = array(
+      'K_ID_POSITION' => $this->input->post('K_ID_POSITION')
+    );
+    $data3 = array(
+      'K_ID_PROJECT' => $this->input->post('K_ID_PROJECT'),
+    );
+    $data4 = array(
+      'K_ID_ROLE' => 2
+    );   
+    $res = $this->Dao_user_model->update_person($data);
+    $res2 = $this->Dao_user_model->update_person($data2);
+    $res3 = $this->Dao_user_model->update_person($data3);
+    $res4 = $this->Dao_user_model->update_person($data4);
   }
   
 }
