@@ -14,17 +14,17 @@ $(function () {
             
         },
 
-        //muestra modal
+        //muestra modal para crear proyecto
         showModalNew: function(){
         	$('#modal_project').modal('show');
         	$('#myModalLabel').html('<strong> Nuevo Proyecto </strong>');
         },
-
-        showModalEdit: function(){
-            alert('jajaja');
-            $('#modal_project').modal('show');
-            $('#myModalLabel').html('<strong> Editar Proyecto </strong>');
-        },
+        //Muestra el modal para modificar el proyecto
+        // showModalEdit: function(){
+        //     alert('jajaja');
+        //     $('#modal_project').modal('show');
+        //     $('#myModalLabel').html('<strong> Editar Proyecto </strong>');
+        // },
 
 
 
@@ -45,7 +45,9 @@ $(function () {
     	    	}
     	    );
     	},	
-    	//pintar tabla
+    	
+
+        //pintar tabla
     	printTable: function(data){
     		// nombramos la variable para la tabla y llamamos la configuiracion
     	    vista.tablePorject = $('#table_project').DataTable(vista.configTable(data, [
@@ -88,9 +90,10 @@ $(function () {
         },
         //genera botones para ser pintados en la tabla de proyectos
         getButtons: function(obj){
+          
             return '<div class="btn-group">'
-                    + '<button class="btn btn-primary btn-xs btn_edit"  title="Editar"><span class="glyphicon glyphicon-edit"></span></button>'
-                    + '<button class="btn btn-warning btn-xs disabler" title="Desactivar"><span class="glyphicon glyphicon-ban-circle"></span></button>'
+                    + '<button onclick="showModalEdit(\''+obj.K_ID_PROJECT+'\',\''+obj.N_PROJECT_NAME+'\',\''+obj.N_PROJECT_DESCRIPTION+'\',\''+obj.I_STATUS+'\',\''+obj.N_CALCULATEMETHOD_NAME+'\')" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-edit"></span></button>'
+                    + '<button class="btn btn-warning btn-xs" title="Desactivar"><span class="glyphicon glyphicon-ban-circle"></span></button>'
               	 + '</div>';
         },
     	
@@ -100,3 +103,7 @@ $(function () {
     };
     vista.init();
 });
+
+function showModalEdit(idProject, project, description, status, calculateMethod){
+   
+}
