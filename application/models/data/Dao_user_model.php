@@ -70,13 +70,11 @@
 		
 
 			$error = $this->db->error();
-        if ($error['message']) {
-          return 'error';
-        }else{
-        
-
-          return 1;
-        }
-	}
+	        if ($error['message']) {
+	          return 'error';
+	        }else{ 
+	          return 1;
+	        }
+		}
 		
 }

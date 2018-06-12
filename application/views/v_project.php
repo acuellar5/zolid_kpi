@@ -23,19 +23,19 @@
             </div>
             <div class="modal-body">
               <div>
-                <form class="well form-horizontal" id="formModal_project" action=""  method="post" data-action="FOR_UPDATE" novalidate="novalidate">
+                <form class="well form-horizontal" id="formModal_project" action="<?= base_url('Project/c_saveProject'); ?>"  method="post">
                   <fieldset>
                     <div class="widget bg_white m-t-25 display-block">
                       <fieldset class="col-md-12 control-label">
                         <!-- valores ocultos -->
-                        <input type="hidden" id="newproject" value="">
+                        <input type="hidden" id="K_ID_PROJECT" name="K_ID_PROJECT" value="">
           
                         <div class="form-group">
                           <label for="N_PROJECT_NAME" class="col-md-3 control-label">Nombre: &nbsp;</label>
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                              <input name="N_PROJECT_NAME" id="mdl_nombre" class="form-control" type="text">
+                              <input name="N_PROJECT_NAME" id="mdl_nombre" class="form-control" minlength="3" type="text" required>
                             </div>
                           </div>
                         </div>
@@ -45,7 +45,7 @@
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon" id="statusColor"><i class="glyphicon glyphicon-hand-right"></i></span>
-                              <select name="K_ID_CALCULATE_METHOD" id="mdl_metodo" class="form-control">
+                              <select name="K_ID_CALCULATE_METHOD" id="mdl_metodo" class="form-control" required>
                                 <option value="">seleccione</option>
                               </select>
                             </div>
@@ -66,7 +66,6 @@
                       <!--  fin seccion izquierda form-->
 
                     </div>
-                    <!-- espacio para adicionar tecnicos -->
                     <div class="widget bg_white m-t-25 display-block">
 
                     </div>
@@ -78,25 +77,28 @@
 
             <div class="modal-footer">
               <button type="button" class="btn btn-default" id="mbtnCerrarModal" data-dismiss="modal"><i class='glyphicon glyphicon-remove'></i>&nbsp;Cancelar</button>
-              <button type="button" class="btn btn-info" id="mbtnUpdticket"><i class='glyphicon glyphicon-save'></i>&nbsp;Crear</button>
+              <button type="submit" class="btn btn-success" id="mbtnUpdticket" form="formModal_project"><i class='glyphicon glyphicon-save'></i>&nbsp;Guardar</button>
             </div>
           </div>
         </div>
       </div> 
-
-
   </div>
 
   <div id="Metodo_calculo" class="tab-pane fade">
      <h3>Metodo de Calculo</h3>
       <!--  cuerpo    -->
-
+       <!-- BOTON PARA AGREGAR PROYECTO -->
+      <button class="btn btn-info" id="btn_new_methodCalculate" style="margin-bottom: 2%;"><i class="glyphicon glyphicon-plus"></i>&nbsp; Nuevo</button>
   </div>
-
-
-
-
 </div>
+
+<?php if (isset($_GET['msj'])): ?>
+  <?php if ($_GET['msj'] == 'ok'): ?>
+    <script> swal("OK!","La información se guardó correctamente!","success",); </script>
+    <?php else: ?>
+    <script> swal("ERROR!","La información no fue guardada correctamente!","error",); </script>
+  <?php endif ?>
+<?php endif ?>
 
 
 

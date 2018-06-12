@@ -21,4 +21,41 @@ class Dao_project_model extends CI_Model {
   	return $query->result();
   }
 
+  public function insertProject($datos){
+    $this->db->insert('project', $datos);
+
+    $error = $this->db->error();
+    if ($error['message']) {
+      return false;
+    }else{ 
+      return true;
+    }
+  }
+
+  public function m_editProject($datos){
+    $this->db->where('K_ID_PROJECT', $datos['K_ID_PROJECT']);
+    $this->db->update('project', $datos);
+
+    $error = $this->db->error();
+    if ($error['message']) {
+      return false;
+    }else{ 
+      return true;
+    }
+  }
+  public function m_statusProject($datos){
+    $this->db->where('K_ID_PROJECT', $datos['K_ID_PROJECT']);
+    //Actualice en la tabla "Proyecto"
+    $this->db->update('project', $datos);
+
+    $error = $this->db->error();
+    if ($error['message']) {
+      return false;
+    }else{ 
+      return true;
+    }
+  }  
+
+
+
 }	

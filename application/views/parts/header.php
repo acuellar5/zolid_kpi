@@ -19,6 +19,9 @@
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap.min.css') ?>">
 		<!-- CSS BUTTONS_PERSON -->
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_modulo_person.css') ?>">
+
+
+		<script type="text/javascript" src="<?= base_url('assets/plugins/sweet-alert/sweetalert.min.js'); ?>"></script>
 	</head>
 	<body>
 		<div class="kpi_header">
