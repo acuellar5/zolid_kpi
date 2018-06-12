@@ -4,6 +4,8 @@
 <!-- scripts del footer -->
 <script src="<?= base_url('assets/plugins/jquery/jquery.min.js')?>"></script>
 <script src="<?= base_url('assets/plugins/Bootstrap/js/bootstrap3.3.7.min.js')?>"></script>
+<!-- SWEET ALERT -->
+<script src="<?= base_url('assets/plugins/sweet-alert/sweetalert.min.js')?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/plugins/datatables/DataTables-1.10.16/js/jquery.dataTables.min.js')?>"></script>
 <!-- ********************************************************************************** -->
 <script> var baseurl = "<?php echo base_url(); ?>";</script>
@@ -11,7 +13,6 @@
 	<script src="<?= base_url('assets/js/project.js')?>"></script>	
 <?php endif ?>
 <!-- ************************************vista person ***********************************-->
-<script> var baseurl = "<?php echo base_url(); ?>";</script>
 <?php if ($this->uri->segment(1) == 'person'): ?>
 	<script> var lenguage = [
 								"<?= $this->lang->line('person_title_modals_edit') ?>",

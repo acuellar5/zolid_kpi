@@ -11,10 +11,8 @@ $(function () {
         events: function () {
         	$('.button_des_person').on('click', persona.showModal);
             $('#button_add_person').on('click', persona.showModalNew);
-            $('#button_cancel').on('click', persona.clearModal);
-            $('#close').on('click', persona.clearModal);
-            $('#button_add_person').on('click', persona.ocultar_button_new);
-        	$('#button_mod_person').on('click', persona.ocultar_button_edit);
+            $('.close_mod_pers').on('click', persona.clearModal);
+            $('#button_update').on('click', persona.updatePerson)
         },
 
         //aplica datatables a la tabla persona
@@ -24,6 +22,17 @@ $(function () {
 
         //aparece modal
         showModal: function(event){
+
+            $('#button_insert').hide(); 
+            $('#button_eliminate').show();
+            $('#button_update').show();
+            $('#group_cm').show();
+            $('#group_cm_1').show();
+            //$('.proyct_person').hide();
+            // $(".gorups_person").attr('disabled','disabled'); 
+            $( "#I_TIME_WORKED" ).prop( "disabled", true );
+            $( "#K_ID_DOCUMENT" ).prop( "disabled", true );
+            
 
         	var button = $(this);
         	var trParent = button.parents('tr');
@@ -45,31 +54,68 @@ $(function () {
             $('#I_STATUS').val(record[10]);
         },
         showModalNew: function(){
-        	$('#modal_person').modal('show');
-        	$('#modal_title_person').html(lenguage[1]);
-        	$('#person_title_modals').html(lenguage[3]);
-        },
-        //limpia el modal cada vez que se cierra
-        clearModal: function(){
-             // $(this).find("input,textarea,select").val('').end();
-             $('#formModal')[0].reset();
-             $("label.error").remove();
-        },
-        //oculta los botones de agregar persona
-        ocultar_button_new: function(){
             $('#button_eliminate').hide();
             $('#button_update').hide();
             $('#button_insert').show();
             $('#group_cm').hide();
             $('#group_cm_1').hide();
+
+        	$('#modal_person').modal('show');
+        	$('#modal_title_person').html(lenguage[1]);
+        	$('#person_title_modals').html(lenguage[3]);
         },
-        //oculta los botones de editar persona
-        ocultar_button_edit: function(){
-            $('#button_insert').hide(); 
-            $('#button_eliminate').show();
-            $('#button_update').show();
-            $('#group_cm').show();
-            $('#group_cm_1').show();
+        //limpia el modal cada vez que se cierra
+        clearModal: function(){   
+             $('#formModal')[0].reset();
+             $("label.error").remove();
+        },
+        //
+        updatePerson: function(){
+
+
+
+            var id = $('#K_ID_DOCUMENT').val();
+            var nombre = $('#N_NAME').val();
+            var apellido = $('#N_LAST_NAME').val() ;
+            var dia_inicio = $('#D_START_DAY').val() ;
+            var tiempo_trabajado= $('#D_TRIAL_PERIOD').val();
+          //var cargo = $('#K_ID_POSITION').val();
+          //var nombre_proyecto= $('#N_PROJECT_NAME').val();
+            var role = $('#N_NAME_ROLE').val();
+            var estado = $('#I_STATUS').val();
+            var fecha_fin = $('#D_END_DAY').val();
+
+            $.post( baseurl +"User/update_user",
+            {
+                K_ID_DOCUMENT: id,
+                N_NAME: nombre,
+                N_LAST_NAME: apellido,
+                D_START_DAY: dia_inicio,
+                D_TRIAL_PERIOD: tiempo_trabajado,
+               // K_ID_POSITION: cargo,
+               // N_PROJECT_NAME: nombre_proyecto,
+                N_NAME_ROLE: role,
+                I_STATUS: estado,
+                D_END_DAY: fecha_fin
+            },
+            function(data){
+                            console.log(data);
+                            var res = JSON.parse(data);
+                            console.log(res);
+                            if (res == 1) {
+                                swal("Se actualizo correctamente!", "", "success");
+                                setTimeout('document.location.reload()',1500);
+                            }else {
+                              swal("No actualizo correctamente!", "", "error");
+                            }
+
+
+
+
+
+            });
+
+
         },
 
     };

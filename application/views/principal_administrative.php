@@ -5,7 +5,7 @@
 				<figure class="effect-oscar"> 
 					<img src="<?= base_url('assets/images/people (Copiar).jpg') ?>" />
 					<figcaption>
-						<h2>Modulo <br><span>Persona</span></h2><br>					
+						<h2><?= $this->lang->line('principal_module')?><br><span><?= $this->lang->line('principal_person')?></span></h2><br>					
 						<p>Registrar</p>
 						<p>Modificar</p>
 						<p>Desactivar</p>
@@ -22,7 +22,7 @@
 				<figure class="effect-oscar">
 						<img src="<?= base_url('assets/images/project.jpg') ?>" />
 					<figcaption>
-						<h2>Modulo <span>Proyecto</span></h2><br>
+						<h2><?= $this->lang->line('principal_module')?> <span>Proyecto</span></h2><br>
 						<p>Registrar</p>
 						<p>Modificar</p>
 						<p>Desactivar</p>
@@ -34,7 +34,7 @@
 				<figure class="effect-oscar">
 					<img src="<?= base_url('assets/images/Kpi1 (Copiar).jpg') ?>" />
 					<figcaption>
-						<h2>Modulo  <br><span>KPI'S</span></h2><br>
+						<h2><?= $this->lang->line('principal_module')?>  <br><span>KPI'S</span></h2><br>
 						<p>Registrar</p>
 						<p>Modificar</p>
 						<p>Desactivar</p>
