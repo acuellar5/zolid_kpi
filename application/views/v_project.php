@@ -23,7 +23,7 @@
             </div>
             <div class="modal-body">
               <div>
-                <form class="well form-horizontal" id="formModal" action=""  method="post" data-action="FOR_UPDATE" novalidate="novalidate">
+                <form class="well form-horizontal" id="formModal_project" action=""  method="post" data-action="FOR_UPDATE" novalidate="novalidate">
                   <fieldset>
                     <div class="widget bg_white m-t-25 display-block">
                       <fieldset class="col-md-12 control-label">
@@ -31,37 +31,33 @@
                         <input type="hidden" id="newproject" value="">
           
                         <div class="form-group">
-                          <label for="mdl_name" class="col-md-3 control-label">Nombre: &nbsp;</label>
+                          <label for="N_PROJECT_NAME" class="col-md-3 control-label">Nombre: &nbsp;</label>
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                              <input name="N_PROJECT_NAME" id="PROJECT_NAME" class="form-control" type="text">
+                              <input name="N_PROJECT_NAME" id="mdl_nombre" class="form-control" type="text">
                             </div>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label for="mtxtEstado" class="col-md-3 control-label">Métodos de cálculo: &nbsp;</label>
+                          <label for="K_ID_CALCULATE_METHOD" class="col-md-3 control-label">Métodos de cálculo: &nbsp;</label>
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon" id="statusColor"><i class="glyphicon glyphicon-hand-right"></i></span>
-                              <select name="mtxtEstado" id="mtxtEstado" class="form-control"> <!-- onchange="realizarCalificacion()" -->
-                                <option value="1">Abierto</option>
-                                <option value="2">En Progreso</option>
-                                <option value="3">Cancelado</option>
-                                <!-- <option value="4">En Espera Interventoria</option> -->
-                                <option value="5">Ejecutado</option>
+                              <select name="K_ID_CALCULATE_METHOD" id="mdl_metodo" class="form-control">
+                                <option value="">seleccione</option>
                               </select>
                             </div>
                           </div>
                         </div>
 
                             <div class="form-group">
-                              <label for="mdl_name" class="col-md-3 control-label">Descripción del proyecto: &nbsp;</label>
+                              <label for="N_PROJECT_DESCRIPTION" class="col-md-3 control-label">Descripción del proyecto: &nbsp;</label>
                               <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                       <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-                                      <textarea class="form-control" rows="5" id="comment"></textarea>
+                                      <textarea class="form-control" rows="5" id="mdl_descripcion_proyecto" name="N_PROJECT_DESCRIPTION"></textarea>
                                     </div>
                               </div>
                             </div>
