@@ -1,4 +1,6 @@
-<br><br><br><br></div>	
+<!-- cierre container -->
+</div>
+<!-- inicio footer -->
 <div class="footer">
 	<p>©1998-2018 ZTE Corporation - ZTE Colombia. All rights reserved</p>
 </div>
@@ -7,7 +9,9 @@
 <script src="<?= base_url('assets/plugins/Bootstrap/js/bootstrap3.3.7.min.js')?>"></script>
 <!-- SWEET ALERT -->
 <script src="<?= base_url('assets/plugins/sweet-alert/sweetalert.min.js')?>"></script>
-<script type="text/javascript" src="<?= base_url('assets/plugins/datatables/DataTables-1.10.16/js/jquery.dataTables.min.js')?>"></script>
+<!-- DATATABLES -->
+<script type="text/javascript" src="<?= base_url('assets/plugins/datatables/DataTables-1.10.16/js/jquery.dataTables.min.js')?>">
+</script>
 <!-- ********************************************************************************** -->
 <script> var baseurl = "<?php echo base_url(); ?>";</script>
 <?php if ($this->uri->segment(1) == 'project'): ?>

@@ -3,7 +3,8 @@
 $lang['person_id'] = 'Documento';
 $lang['person_name'] = 'Nombre';
 $lang['person_lastname'] = 'Apellido';
-$lang['person_start_day'] = 'Dia de inicio';
+$lang['person_start_day'] = 'Fecha inicio';
+$lang['person_end_day'] = 'Fecha fin';
 $lang['person_time_worked'] = 'Tiempo trabajado';
 $lang['person_trial_time'] = 'Tiempo de prueba';
 $lang['person_position'] = 'Cargo';
@@ -24,4 +25,3 @@ $lang['button_update'] = 'Actualizar';
 $lang['button_insert'] = 'Insertar';
 $lang['person_title_modals_edit'] = 'Modificar';
 $lang['person_title_edit_modals'] = 'Editar';
-$lang['person_end_day'] = 'End day';

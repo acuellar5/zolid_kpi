@@ -4,6 +4,7 @@ $lang['person_id'] = 'Document';
 $lang['person_name'] = 'Name';
 $lang['person_lastname'] = 'Last name';
 $lang['person_start_day'] = 'Start day';
+$lang['person_end_day'] = 'End day';
 $lang['person_time_worked'] = 'Time worked';
 $lang['person_trial_time'] = 'Trial time';
 $lang['person_position'] = 'Position';

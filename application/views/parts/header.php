@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="<?= base_url('assets/plugins/Bootstrap/css/bootstrap3.3.7.min.css'); ?>">
 		<!-- STYLES MODULES PRINCIPAL ADMIN -->
 		<?php if ($this->uri->segment(1) == 'principal'): ?>
-			<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_principal_administrative.css'); ?>">
+		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_principal_administrative.css'); ?>">
 		<?php endif ?>
 		<!--   ICONO PAGINA    -->
 		<link rel="icon" href="<?= base_url('assets/images/title_icon.png'); ?>">
@@ -19,6 +19,7 @@
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap.min.css') ?>">
 		<!-- CSS BUTTONS_PERSON -->
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_modulo_person.css') ?>">
+		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/algo.css'); ?>">
 
 
 		<script type="text/javascript" src="<?= base_url('assets/plugins/sweet-alert/sweetalert.min.js'); ?>"></script>
@@ -31,7 +32,6 @@
 						<a class="navbar-brand" href="#">
 							<img class="logoNav" src="<?= base_url(); ?>assets/images/logoNav.png">
 						</a>
-
 					</div>
 					<ul class="nav navbar-nav">
 						<li class="active"><a class="home" href="#"><?= $this->lang->line('header_home'); ?></a></li>
