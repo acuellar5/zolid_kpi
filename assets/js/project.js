@@ -35,6 +35,8 @@ $(function () {
             // $('#formModal_project').reset();
             // resetea el formulario (lo deja vacio)
            document.getElementById("formModal_project").reset();
+           $('#formModal_project').attr('action', baseurl + 'Project/c_saveProject');
+           $('#mbtnUpdticket').html("<i class='glyphicon glyphicon-send'></i>&nbsp;Guardar");
             // // resetea el select (le asigna el valor vacio)
             //$('#mdl_metodo').val('');//
             $('#mdl_metodo option').attr("selected", false);
@@ -112,11 +114,26 @@ $(function () {
         },
         //genera botones para ser pintados en la tabla de proyectos
         getButtons: function(obj){
-          // console.log(obj);
-            return '<div class="btn-group">'
-                    + '<button onclick="showModalEdit(\''+obj.K_ID_PROJECT+'\',\''+obj.N_PROJECT_NAME+'\',\''+obj.N_PROJECT_DESCRIPTION+'\',\''+obj.I_STATUS+'\',\''+obj.N_CALCULATEMETHOD_NAME+'\',\''+obj.K_ID_CALCULATE_METHOD+'\')" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-edit"></span></button>'
-                    + '<button class="btn btn-warning btn-xs" title="Desactivar"><span class="glyphicon glyphicon-ban-circle"></span></button>'
-              	 + '</div>';
+          console.log(obj);
+          let title;
+          let icon;
+          let classButton;
+          if (obj.I_STATUS == 1) {
+            title = "Desactivar";
+            icon = "glyphicon-ban-circle";
+            classButton = "warning";
+          } else {
+            title = "Activar";
+            icon = "glyphicon-ok-sign";
+            classButton = "success";
+          }
+        const button = '<div class="btn-group">'
+                        + '<button onclick="showModalEdit(\''+obj.K_ID_PROJECT+'\',\''+obj.N_PROJECT_NAME+'\',\''+obj.N_PROJECT_DESCRIPTION+'\',\''+obj.I_STATUS+'\',\''+obj.N_CALCULATEMETHOD_NAME+'\',\''+obj.K_ID_CALCULATE_METHOD+'\')" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-edit"></span></button>'
+                       
+                        + '<button onclick="showpopUpDesactivate(\''+obj.K_ID_PROJECT+'\',\''+obj.I_STATUS+'\')" class="btn btn-'+classButton+' btn-xs" title="'+title+'"><span class="glyphicon '+icon+'"></span></button>'
+              	      + '</div>';
+
+            return button;     
         },
     	
 
@@ -137,4 +154,58 @@ function showModalEdit(idProject, project, description, status, calculateMethod,
     $('#mdl_descripcion_proyecto').val(description);
     $('#modal_project').modal('show');
 
+    $('#mbtnUpdticket').html("<i class='glyphicon glyphicon-edit'></i>&nbsp;Modificar");
+    $('#formModal_project').attr('action', baseurl + 'Project/c_editProject');
+    $('#K_ID_PROJECT').val(idProject);
+}
+
+function showpopUpDesactivate(idProject, status){
+    let valores = [];
+    if (status == 1) {
+        valores = ['desactivar', 'desactivado', 'desactivación'];
+    } else {
+        valores = ['activar', 'activado', 'activación'];
+    }
+    let eleccion = showAlert(valores);
+    if (eleccion) {
+        //Enviar la peticion por ajax
+        $.post( baseurl + "/Project/c_statusProject",
+            {
+                K_ID_PROJECT: idProject,
+                I_STATUS    : status
+            },
+            function(data){
+                var obj = JSON.parse(data);
+
+                
+            }
+        );        
+    }
+
+}
+
+function showAlert (valores){
+    swal({
+              title: valores[0] + "!",
+              text: "¿Desea "+valores[0]+" este proyecto?",
+              icon: "warning",
+              buttons: true,
+              
+              dangerMode: true,
+              buttons: ["Cancelar!", valores[0] + "!"],
+        })
+            .then((desactivar) => {
+                if (desactivar) {
+                    swal("¡Genial! ¡El proyecto ha sido "+valores[1]+"!", {
+                        icon: "success",
+                    });
+                    return true;
+                } else {
+                    swal("¡Cancelaste la "+valores[2]+"!",{
+                        icon: "error",
+                        dangerMode: true,
+                    });
+                    return false;
+                }
+            });
 }
