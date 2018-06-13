@@ -4,3 +4,15 @@
 .kpi_header .home{
 	background: #0808085c !important;
 }
+
+
+
+/*CSS de la seccion (Modal metodo de calculo)*/
+.cssetion {
+
+    background-color: #fff;
+    border: 1px solid #b9b3b3;
+    border-radius: 15px;
+    margin: 18px 0px;	
+  	padding: 25px;
+ }
