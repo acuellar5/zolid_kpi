@@ -216,7 +216,6 @@ $(function () {
 
            //
            showModalDate: function(){
-            swal("Seeeeeee");
             $('#smallModal').modal('show');
             
            },

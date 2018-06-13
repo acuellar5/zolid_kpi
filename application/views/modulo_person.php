@@ -47,7 +47,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close"><i class=" glyphicon glyphicon-remove "></i></button>
+				<button type="button" class="close close_mod_pers" data-dismiss="modal" aria-label="Close"><i class=" glyphicon glyphicon-remove "></i></button>
 				<h3 class="modal-title" id="modal_title_person"><i class="glyphicon glyphicon-user"></i></h3>
 			</div>
 			<div class="modal-body">
@@ -58,12 +58,12 @@
 								<i class="fa fa-fw fa-question-circle"></i>&nbsp;&nbsp;
 							</h2>
 							<fieldset class="col-md-6 control-label">
-								<div class="form-group">
+								<div class="form-group gorups_person">
 									<label for="K_ID_DOCUMENT" class="col-md-3 control-label"><?= $this->lang->line('person_id') ?>: &nbsp;</label>
 									<div class="col-md-8 selectContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input name="K_ID_DOCUMENT" id="K_ID_DOCUMENT" class="form-control" type="text">
+											<input name="K_ID_DOCUMENT" id="K_ID_DOCUMENT" required  maxlength="11" minlength="5" class="form-control" type="text">
 										</div>
 									</div>
 								</div>
@@ -73,7 +73,7 @@
 									<div class="col-md-8 selectContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input name="N_NAME" id="N_NAME" class="form-control" type="text">
+											<input name="N_NAME" id="N_NAME" required maxlength="20" minlength="3" class="form-control" type="text">
 										</div>
 									</div>
 								</div>
@@ -83,7 +83,7 @@
 									<div class="col-md-8 selectContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input name="N_LAST_NAME" id="N_LAST_NAME" class="form-control" type="text">
+											<input name="N_LAST_NAME" id="N_LAST_NAME" required maxlength="20" minlength="4" class="form-control" type="text">
 										</div>
 									</div>
 								</div>
@@ -94,13 +94,13 @@
 									<div class="col-md-8 selectContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-											<input name="D_START_DAY" id="D_START_DAY" class="form-control" type="date">
+											<input name="D_START_DAY" id="D_START_DAY" required class="form-control" type="date">
 										</div>
 									</div>
 								</div>
 
 
-								<div class="form-group">
+								<div class="form-group gorups_person">
 									<label for="I_TIME_WORKED" class="col-md-3 control-label"><?= $this->lang->line('person_time_worked') ?>: &nbsp;</label>
 									<div class="col-md-8 selectContainer">
 										<div class="input-group">
@@ -133,25 +133,20 @@
 								</div>
 
 
-								<div class="form-group">
+								<div class="form-group ">
 									<label for="K_ID_POSITION" class="col-md-3 control-label"><?= $this->lang->line('person_position') ?>: &nbsp;</label>
 									<div class="col-md-8 selectContainer">
 										<div class="input-group">
 											<span class="input-group-addon" id=""><i class="glyphicon glyphicon-hand-right"></i></span>
-<<<<<<< HEAD
 											<select name="K_ID_POSITION" id="K_ID_POSITION" required  class="form-control">
-												<<option></option>Select...</option>
-=======
-											<select name="K_ID_POSITION" id="" class="form-control">
-												<option>Select...</option>
->>>>>>> f730b997651b1b69b8a3cee10da83dff14a551a0
+												<option></option>Select...</option>
 												<option value="1">Jefe</option>
 												<option value="2">Coordinador</option>
 												<option value="3">Esclavo</option>
 											</select>
 										</div>
 									</div>
-								</div>
+								</div>	
 
 
 								<div class="form-group">
@@ -159,12 +154,12 @@
 									<div class="col-md-8 selectContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-											<input name="D_TRIAL_PERIOD" id="D_TRIAL_PERIOD" class="form-control" type="text">
+											<input name="D_TRIAL_PERIOD" id="D_TRIAL_PERIOD" class="form-control" required maxlength="20" minlength="3" type="text">
 										</div>
 									</div>
 								</div> 
 
-								<div class="form-group" id="group_cm"> 
+								<!-- <div class="form-group" id="group_cm"> 
 									<label for="N_NAME_ROLE" class="col-md-3 control-label"><?= $this->lang->line('person_role') ?>: &nbsp;</label>
 									<div class="col-md-8 selectContainer">
 										<div class="input-group">
@@ -172,14 +167,13 @@
 											<input name="N_NAME_ROLE" id="N_NAME_ROLE" class="form-control" type="text">
 										</div>
 									</div>
-								</div>  
+								</div>   -->
 
 								<!-- <div class="form-group" id="group_cm_1">
 									<label for="I_STATUS" class="col-md-3 control-label"><?= $this->lang->line('person_state') ?>: &nbsp;</label>
 									<div class="col-md-8 selectContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-<<<<<<< HEAD
 											<select name="I_STATUS" id="I_STATUS" class="form-control" required >
 												<option value="">Select...</option>
 												<option value="1">Activo</option>
@@ -201,11 +195,6 @@
 									</div>
 								</div>
 
-											<input name="I_STATUS" id="I_STATUS" class="form-control" type="text">
-										</div>
-									</div>
-								</div> 
-
 							</fieldset>
 							<!--  fin seccion derecha form---->
 						</div>
@@ -213,9 +202,8 @@
 					</div>
 
 					<div class="modal-footer">
-
-				     <button type="button" class="btn btn-danger" id="button_eliminate" style="float: left;"><i class='glyphicon glyphicon-remove'></i>&nbsp;<?= $this->lang->line('button_eliminate') ?></button>
-					 <button type="button" class="btn btn-default" id="button_cancel" data-dismiss="modal"><i class='glyphicon glyphicon-chevron-up'></i>&nbsp;<?= $this->lang->line('button_cancel') ?></button>
+				     <button type="button" class="btn btn-warning" id="button_eliminate" style="float: left;"><i class='glyphicon glyphicon-remove'></i>&nbsp;<?= $this->lang->line('button_eliminate') ?></button>
+					 <button type="button" class="btn btn-default close_mod_pers" data-dismiss="modal"><i class='glyphicon glyphicon-chevron-up'></i>&nbsp;<?= $this->lang->line('button_cancel') ?></button>
 				     <button type="button" class="btn btn-info" id="button_update"><i class='glyphicon glyphicon-save'></i>&nbsp;<?= $this->lang->line('button_update') ?></button>
 						<button type="submit" class="btn btn-primary" id="button_insert" ><i class='glyphicon glyphicon-save'></i>&nbsp;<?= $this->lang->line('button_insert') ?></button>
 					</form>
@@ -226,20 +214,37 @@
 
 
 
-	<!-- **************SMALL MODAL ******************************************** -->
-<div class="modal fade" id="smallModal"  data-backdrop="static" data-keyboard="false" role="dialog">
+	<!-- **************SMALL MODAL ******************************************** -->.
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
+
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">fecha</h4>
+        <h4 class="modal-title" id="myModalLabel">Fechas</h4>
       </div>
       <div class="modal-body">
-		
+	        
 			
+		<label>Fecha inicio &nbsp;&nbsp;</label>
+		<input type="date" name="" id="day_star">	
+		
+		<label>Fecha fin &nbsp;&nbsp;&nbsp;</label>
+		<input type="date" name="" id="day_end">
+
+
+
+
+
+
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
