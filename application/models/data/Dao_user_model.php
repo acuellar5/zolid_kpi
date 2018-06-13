@@ -32,24 +32,33 @@
 		//carga los datos de la persona
 		public function m_load_data_person(){
 			$query = $this->db->query("
-					SELECT p.K_ID_DOCUMENT AS documento, p.N_NAME AS nombre,
-					p.N_LAST_NAME AS apellido, p.D_START_DAY AS dia_de_inicio, p.D_END_DAY AS fecha_fin,
-					p.I_TIME_WORKED AS tiempo_trabajado, p.D_TRIAL_PERIOD AS tiempo_de_prueba, 
-					po.N_POSITION_NAME AS cargo, pr.N_PROJECT_NAME AS proyecto,
-					cm.N_CALCULATEMETHOD_NAME AS metodo_de_calculo, r.N_NAME_ROLE AS role, p.I_STATUS AS estado,
-					p.D_END_DAY AS fecha_fin
-										FROM person p 
-										LEFT JOIN project pr 
-										ON p.K_ID_PROJECT = pr.K_ID_PROJECT
-										LEFT JOIN project_kpi pk
-										ON pk.K_I_ID_PROJECT_KPI = pr.K_ID_PROJECT
-										LEFT JOIN calculate_method cm
-										ON pr.K_ID_PROJECT = cm.K_ID_PROJECT 
-					                    LEFT JOIN role r 
-					                    ON p.K_ID_ROLE = r.K_ID_ROLE
-					                    LEFT JOIN position po 
-					                    ON p.K_ID_POSITION = po.K_ID_POSITION
-										;
+					
+			SELECT p.K_ID_DOCUMENT AS documento, p.N_NAME AS nombre,
+			p.N_LAST_NAME AS apellido, p.D_START_DAY AS dia_de_inicio, p.D_END_DAY AS fecha_fin,
+			p.I_TIME_WORKED AS tiempo_trabajado, p.D_TRIAL_PERIOD AS tiempo_de_prueba, 
+			po.N_POSITION_NAME AS cargo, pr.N_PROJECT_NAME AS proyecto,
+			cm.N_CALCULATEMETHOD_NAME AS metodo_de_calculo, r.N_NAME_ROLE AS role, p.I_STATUS AS estado,
+			
+							CASE 
+							WHEN p.I_STATUS = '0' THEN  'Inactivo'
+							WHEN p.I_STATUS = '1' THEN  'Activo'
+							END AS ESTADO
+
+							FROM person p 
+							LEFT JOIN project pr 
+							ON p.K_ID_PROJECT = pr.K_ID_PROJECT
+							LEFT JOIN project_kpi pk
+							ON pk.K_I_ID_PROJECT_KPI = pr.K_ID_PROJECT
+							LEFT JOIN calculate_method cm
+							ON pr.K_ID_PROJECT = cm.K_ID_PROJECT 
+                    		LEFT JOIN role r 
+                    		ON p.K_ID_ROLE = r.K_ID_ROLE
+                    		LEFT JOIN position po 
+                    		ON p.K_ID_POSITION = po.K_ID_POSITION
+
+                    		order by p.I_STATUS desc
+							;
+                    
                      ");
 
 			return $query->result();
@@ -67,13 +76,29 @@
 		
 
 			$error = $this->db->error();
-        if ($error['message']) {
-          return 'error';
-        }else{
-        
+	        if ($error['message']) {
+	          return 'error';
+	        }else{
+	        
 
-          return 1;
-        }
-	}
+	          return 1;
+	        }
+		}
+		//actualizar estado de la persona
+		public function update_estate_person($data){
+			$this->db->where('K_ID_DOCUMENT', $data['K_ID_DOCUMENT']);
+			$this->db->update('person', $data);		
+		
+
+			$error = $this->db->error();
+	        if ($error['message']) {
+	          return 'error';
+	        }else{
+	        
+
+	          return 1;
+	        }
+		}
+	
 		
 }

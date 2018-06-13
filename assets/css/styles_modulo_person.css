@@ -4,3 +4,32 @@
 #button_des_person {
    margin: 0 0 0 2% ;	
 }
+.Activo{
+	color:red;
+}
+.Inactivo{
+	color:blue;
+}
+#table_information td:nth-child(5){    
+  min-width: 80px !important;
+}
+#table_information td:nth-child(4){    
+  min-width: 110px !important;
+}
+#table_information td:nth-child(2){    
+  min-width: 110px !important;
+}
+#table_information td:nth-child(5){    
+  min-width: 80px !important;
+}
+#table_information td:nth-child(4){    
+  min-width: 110px !important;
+}
+#table_information{    
+  font-size: 12px
+}
+.th_mod_person{
+	background:#15344e; 
+	color: white;
+	text-align: center;
+}
