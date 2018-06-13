@@ -1,3 +1,4 @@
+<br><br><br><br></div>	
 <div class="footer">
 	<p>©1998-2018 ZTE Corporation - ZTE Colombia. All rights reserved</p>
 </div>
@@ -10,7 +11,8 @@
 <!-- ********************************************************************************** -->
 <script> var baseurl = "<?php echo base_url(); ?>";</script>
 <?php if ($this->uri->segment(1) == 'project'): ?>
-	<script src="<?= base_url('assets/js/project.js')?>"></script>	
+	<script src="<?= base_url('assets/js/project.js')?>"></script>
+	<script src="<?= base_url('assets/js/calculateMethod.js')?>"></script>	
 <?php endif ?>
 <!-- ************************************vista person ***********************************-->
 <?php if ($this->uri->segment(1) == 'person'): ?>

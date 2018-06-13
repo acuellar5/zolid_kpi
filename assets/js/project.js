@@ -98,7 +98,7 @@ $(function () {
                       targets: -1,
                       orderable: false,
                   }],
-              order: [[0, 'asc']],
+              order: [[3, 'asc']],
               drawCallback: onDraw
             }
         },
@@ -114,7 +114,6 @@ $(function () {
         },
         //genera botones para ser pintados en la tabla de proyectos
         getButtons: function(obj){
-          console.log(obj);
           let title;
           let icon;
           let classButton;
@@ -135,10 +134,6 @@ $(function () {
 
             return button;     
         },
-    	
-
-
-
     };
     vista.init();
 });
