@@ -16,16 +16,12 @@
 		<!--   ICONO PAGINA    -->
 		<link rel="icon" href="<?= base_url('assets/images/title_icon.png'); ?>">
 		<!-- CSS DATATABLES  -->
-		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap.min.css') ?>">
 		<!-- CSS BUTTONS_PERSON -->
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_modulo_person.css') ?>">
-<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/algo.css'); ?>">
-=======
 
 
 		<script type="text/javascript" src="<?= base_url('assets/plugins/sweet-alert/sweetalert.min.js'); ?>"></script>
->>>>>>> 9d0a6734de7239f2313c9aa7cd25ca6fd7cb671a
 	</head>
 	<body>
 		<div class="kpi_header">
