@@ -96,7 +96,7 @@ class User extends CI_Controller {
         'D_TRIAL_PERIOD' => $this->input->post('D_TRIAL_PERIOD'),
         'K_ID_POSITION' => $this->input->post('K_ID_POSITION'),
         'K_ID_PROJECT' => $this->input->post('K_ID_PROJECT'),
-        'K_ID_ROLE' => 2,
+        'K_ID_ROLE' => 2
       );
     $this->Dao_user_model->new_person($data);
     $this->v_modulo_person();
@@ -111,20 +111,13 @@ class User extends CI_Controller {
       'D_START_DAY' => $this->input->post('D_START_DAY'),
       'I_TIME_WORKED' => $this->input->post('I_TIME_WORKED'),
       'D_TRIAL_PERIOD' => $this->input->post('D_TRIAL_PERIOD'),
-    );
-    $data2 = array(
-      'K_ID_POSITION' => $this->input->post('K_ID_POSITION')
-    );
-    $data3 = array(
-      'K_ID_PROJECT' => $this->input->post('K_ID_PROJECT'),
-    );
-    $data4 = array(
+     // 'K_ID_PROJECT' => $this->input->post('K_ID_PROJECT'),
+     //'K_ID_POSITION' => $this->input->post('K_ID_POSITION'),
       'K_ID_ROLE' => 2
-    );   
+    );
+    
     $res = $this->Dao_user_model->update_person($data);
-    $res2 = $this->Dao_user_model->update_person($data2);
-    $res3 = $this->Dao_user_model->update_person($data3);
-    $res4 = $this->Dao_user_model->update_person($data4);
+    echo json_encode($res);
   }
   
 }
