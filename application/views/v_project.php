@@ -13,6 +13,7 @@
 
       <table id="table_project" class="table table-bordered table-striped table-hover"></table>
 
+
       <!-- CREACION DE MODAL -->
       <!-- data-backdrop=”static” para que no se cierre el modal al hacer clic afuera -->
       <!-- data-keyboard=”false” no se cierre con la tecla escape (“esc“)  -->
@@ -26,7 +27,7 @@
             <div class="modal-body">
               <div>
                 <form class="well form-horizontal" id="formModal_project" action="<?= base_url('Project/c_saveProject'); ?>"  method="post">
-                  <fieldset>
+                  <fieldset class="cssetion">
                     <div class="widget bg_white m-t-25 display-block">
                       <fieldset class="col-md-12 control-label">
                         <!-- valores ocultos -->
@@ -106,7 +107,7 @@
             </div>
             <div class="modal-body">
               <div class="first-column">
-                <form class="well form-horizontal" id="formModal_project" action="<?= base_url('Project/c_saveProject'); ?>"  method="post">
+                <form class="well form-horizontal" id="formModal_CalculateMethod" action="<?= base_url('MethodCalculate/c_saveCalculateMethod'); ?>"  method="post">
                   <fieldset>
                       <fieldset class="col-md-12 control-label cssetion">
                         <!-- valores ocultos -->
@@ -131,27 +132,27 @@
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-                              <input name="kpi_a" id="mdl_nombre_calculateMethod" class="form-control" minlength="3" type="text" required>
+                              <input name="I_PORCENTAGEKPISA" id="mdl_i_porcentagekpisa" class="form-control" minlength="3" type="text" required>
                             </div>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label for="kpi_a" class="col-md-3 control-label">KPI B: &nbsp;</label>
+                          <label for="kpi_b" class="col-md-3 control-label">KPI B: &nbsp;</label>
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-                              <input name="kpi_a" id="mdl_nombre_calculateMethod" class="form-control" minlength="3" type="text" required>
+                              <input name="I_PORCENTAGEKPISB" id="mdl_i_porcentagekpisb" class="form-control" minlength="3" type="text" required>
                             </div>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label for="kpi_a" class="col-md-3 control-label">KPI C: &nbsp;</label>
+                          <label for="kpi_c" class="col-md-3 control-label">KPI C: &nbsp;</label>
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-                              <input name="kpi_a" id="mdl_nombre_calculateMethod" class="form-control" minlength="3" type="text" required>
+                              <input name="I_PORCENTAGEKPISC" id="mdl_i_porcentagekpisc" class="form-control" minlength="3" type="text" required>
                             </div>
                           </div>
                         </div>
@@ -161,31 +162,31 @@
                       <fieldset class="col-md-6">
                         <h4 align="center"><strong>Bono</strong></h4>
                         <div class="form-group">
-                          <label for="kpi_a" class="col-md-3 control-label">A: &nbsp;</label>
+                          <label for="bono_a" class="col-md-3 control-label">A: &nbsp;</label>
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-                              <input name="kpi_a" id="mdl_nombre_calculateMethod" class="form-control" minlength="3" type="text" required>
+                              <input name="I_PORCENTAGEBONUSA" id="mdl_I_porcentagebonusa" class="form-control" minlength="3" type="text" required>
                             </div>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label for="kpi_a" class="col-md-3 control-label">B: &nbsp;</label>
+                          <label for="bono_b" class="col-md-3 control-label">B: &nbsp;</label>
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-                              <input name="kpi_a" id="mdl_nombre_calculateMethod" class="form-control" minlength="3" type="text" required>
+                              <input name="I_PORCENTAGEBONUSB" id="mdl_i_porcentagebonusb" class="form-control" minlength="3" type="text" required>
                             </div>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label for="kpi_a" class="col-md-3 control-label">C: &nbsp;</label>
+                          <label for="bono_c" class="col-md-3 control-label">C: &nbsp;</label>
                           <div class="col-md-8 selectContainer">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
-                              <input name="kpi_a" id="mdl_nombre_calculateMethod" class="form-control" minlength="3" type="text" required>
+                              <input name="I_PORCENTAGEBONUSC" id="mdl_i_porcentagebonusc" class="form-control" minlength="3" type="text" required>
                             </div>
                           </div>
                         </div>
