@@ -76,7 +76,7 @@ $(function(){
             return response;
         },
         getBotton: function(){
-
+          return 'hoa';
         }
     };
     mc.init();
