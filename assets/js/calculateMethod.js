@@ -75,6 +75,7 @@ $(function(){
             }
             return response;
         },
+<<<<<<< HEAD
         getBotton: function(obj){
           let title;
           let icon;

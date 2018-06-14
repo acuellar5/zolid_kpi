@@ -23,7 +23,11 @@ class MethodCalculate extends CI_Controller {
 	  //trae todos los Metodos de Calculos
   	public function c_getAllmethodCalculate(){
   	$calculatemethod = $this->Dao_methodCalculate_model->m_getAllmethodCalculate();
+<<<<<<< HEAD
    	echo json_encode($calculatemethod);
+=======
+  	echo json_encode($calculatemethod);
+>>>>>>> 0d6389941e7ae5e28c9a177d8b0a301a49d5387a
   }
   
 }

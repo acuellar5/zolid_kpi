@@ -16,7 +16,7 @@
 		<!--   ICONO PAGINA    -->
 		<link rel="icon" href="<?= base_url('assets/images/title_icon.png'); ?>">
 		<!-- CSS BUTTONS_PERSON -->
-		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_modulo_person.css') ?>">
+		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_modulo_person.css?v=2') ?>">
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/algo.css'); ?>">
 
 

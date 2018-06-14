@@ -27,7 +27,7 @@ class Project extends CI_Controller {
 
   public function c_saveProject(){
     $data = array(
-       //clave          y     valor
+       //clave ()         y     valor ()
         'N_PROJECT_NAME' =>  $this->input->post('N_PROJECT_NAME'),
         'K_ID_CALCULATE_METHOD' => $this->input->post('K_ID_CALCULATE_METHOD'),
         'N_PROJECT_DESCRIPTION' => $this->input->post('N_PROJECT_DESCRIPTION'),
