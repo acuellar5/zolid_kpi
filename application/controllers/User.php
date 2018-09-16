@@ -8,7 +8,7 @@ class User extends CI_Controller {
     $this->load->model('data/Dao_user_model');
     //Cargo el lenguale seleccionado por el usuario 
     $this->lang->load('header',$this->session->lang);
-
+     $this->load->model('data/Dao_user_person');
     // $this->load->model('data/Dao_user_model');
     //->load->model('data/configdb_model');
   }
@@ -76,80 +76,32 @@ class User extends CI_Controller {
   public function v_modulo_person(){
     $this->lang->load('header',$this->session->lang);
     $this->lang->load('modulo_person',$this->session->lang);
+  
     $data['title'] = 'Persona';
 
-    $data['information'] = $this->Dao_user_model->m_load_data_person();
+    // $data['information'] = $this->Dao_user_model->m_load_data_person();
 
-    for ($i=0; $i < count($data['information']); $i++) { 
-      if ($data['information'][$i]->estado == 0) {
-        $fecha2 = new DateTime($data['information'][$i]->fecha_fin);
-      }else{
-        $fecha2 = new DateTime("now");
-      }
+    // for ($i=0; $i < count($data['information']); $i++) { 
+    //   if ($data['information'][$i]->estado == 0) {
+    //     $fecha2 = new DateTime($data['information'][$i]->fecha_fin);
+    //   }else{
+    //     $fecha2 = new DateTime("now");
+    //   }
 
-        $fecha1 = new DateTime($data['information'][$i]->dia_de_inicio);
-        $resultado = $fecha1->diff($fecha2);
-        $data['information'][$i]->tiempo_trabajado = $resultado->format('%a Días');
+    //     $fecha1 = new DateTime($data['information'][$i]->dia_de_inicio);
+    //     $resultado = $fecha1->diff($fecha2);
+    //     $data['information'][$i]->tiempo_trabajado = $resultado->format('%a Días');
 
-    }
-
-    
+    // }    
     $this->load->view('parts/header', $data);
     $this->load->view('modulo_person');
     $this->load->view('parts/footer');
   }
-  //insertar nuevas personas en el modulo de persona
-  public function insert_new_user(){
-   
-      $data = array(
-        'K_ID_DOCUMENT' => $this->input->post('K_ID_DOCUMENT'),
-        'N_NAME' => $this->input->post('N_NAME'),
-        'N_LAST_NAME' => $this->input->post('N_LAST_NAME'),
-        'D_START_DAY' => $this->input->post('D_START_DAY'),
-        'D_END_DAY' => $this->input->post('D_END_DAY'),
-        'I_TIME_WORKED' => $this->input->post('I_TIME_WORKED'),
-        'D_TRIAL_PERIOD' => $this->input->post('D_TRIAL_PERIOD'),
-        'K_ID_POSITION' => $this->input->post('K_ID_POSITION'),
-        'K_ID_PROJECT' => $this->input->post('K_ID_PROJECT'),
-        'I_STATUS' => 1,
-        'K_ID_ROLE' => 2  
-      );
 
-    $this->Dao_user_model->new_person($data);
-    $this->v_modulo_person();
-  }
-
-  //actualizar datos en el modulo person  
-  public function update_user(){
-    $data = array(
-      'K_ID_DOCUMENT' => $this->input->post('K_ID_DOCUMENT'),
-      'N_NAME' => $this->input->post('N_NAME'),
-      'N_LAST_NAME' => $this->input->post('N_LAST_NAME'),
-      'D_START_DAY' => $this->input->post('D_START_DAY'),
-      'D_END_DAY' => $this->input->post('D_END_DAY'),
-      'I_TIME_WORKED' => $this->input->post('I_TIME_WORKED'),
-      'D_TRIAL_PERIOD' => $this->input->post('D_TRIAL_PERIOD'),
-      'K_ID_PROJECT' => $this->input->post('K_ID_PROJECT'),
-      'K_ID_POSITION' => $this->input->post('K_ID_POSITION'),
-      'K_ID_ROLE' => 2,
-     // 'I_STATUS' => $this->input->post('I_STATUS')
-    );
-    
-    $res = $this->Dao_user_model->update_person($data); 
-      echo json_encode($res);
+  // TABLA QUE TRAE LA INFORMACION DE LAS PERSONAS QUE TIENEN USUARIOS
+    public function c_getListOtsAllPerson() {
+        $otPadreList = $this->Dao_user_person->get_all_person();
+        echo json_encode($otPadreList);
     }
-  
-      public function c_update_estate_person(){
-        $estado = ($this->input->post('I_STATUS') == 'Activo') ? 0 : 1;
-
-          $data = array(
-            'K_ID_DOCUMENT' => $this->input->post('K_ID_DOCUMENT'),
-            'I_STATUS' => $estado
-           );
-    
-        $res = $this->Dao_user_model->update_estate_person($data);
-        echo json_encode($res);
-    
-      }
   
 }

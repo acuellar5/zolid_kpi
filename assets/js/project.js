@@ -127,6 +127,7 @@ $(function () {
             classButton = "success";
           }
             const button = '<div class="btn-group">'
+            // "<a class='btn btn-default btn-xs ver-al btn_datatable_cami' title='Editar Ots'><span class='fa fa-fw fa-edit'></span></a>"
                          + '<button onclick="showModalEdit(\''+obj.K_ID_PROJECT+'\',\''+obj.N_PROJECT_NAME+'\',\''+obj.N_PROJECT_DESCRIPTION+'\',\''+obj.I_STATUS+'\',\''+obj.N_CALCULATEMETHOD_NAME+'\',\''+obj.K_ID_CALCULATE_METHOD+'\')" class="btn btn-primary btn-xs" title="Editar"><span class="glyphicon glyphicon-edit"></span></button>'
                          + '<button onclick="showpopUpDesactivate(\''+obj.K_ID_PROJECT+'\',\''+obj.I_STATUS+'\')" class="btn btn-'+classButton+' btn-xs" title="'+title+'"><span class="glyphicon '+icon+'"></span></button>'
                   	     + '</div>';
