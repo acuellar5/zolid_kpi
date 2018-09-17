@@ -54,7 +54,7 @@ caption, th {
   font-style: normal;
 }
 html {
-  background-image: url(../../images/login.jpg);
+  background-image: url('../images/font.jpg');
 
   background-attachment: fixed;
 background-repeat: no-repeat;
@@ -105,7 +105,7 @@ form {
   height: auto;
 }
 h1 {
-  color: #6a6a6a;
+  color: white;
   font-weight: bolder;
   font-size: 90px;
 }
@@ -140,7 +140,7 @@ h1 {
 .cms h1 {
   margin-right: 50px;
   margin-left: 0px;
-  color: #6a6a6a;
+  color: white;
 }
 .rota h1 {
   margin-left: 20px;
@@ -162,7 +162,7 @@ h1 {
   margin-top: 80px;
   margin-right: 55px;
 }
-input[type='password'] ,input[type='text'], button {
+input, button {
   border-radius: 15px;
   margin: 4px;
   padding: 8px 6px;
@@ -177,7 +177,7 @@ button {
   height: 40px;
   margin-right: 50px;
   margin-left: -230px;
-  background:  #6a6a6a6b ;
+  background:  #207BE5 ;
   color: white;
   text-align: right;
   cursor: pointer;
@@ -202,27 +202,3 @@ input:focus {
   top: -100px;
   left: 60px;
 }
-
-.sel_login{
-    border-radius: 15px 0px 0px 15px;
-    margin: 4px;
-    padding: 0px 69px;
-    width: 237px;
-    height: 38px;
-    background: white;
-    color: gray;
-    font-size: 15px;
-    transition: all 0.5s ease-out;
-    border: none;
-}
-.form_radio{
-    background-color: #fff;
-    color: gray;
-    margin: 4px;
-    padding: 0px 30px;
-    height: 28px;
-    font-size: 15px;
-    border-radius: 15px 0 0 15px;
-    padding-top: 10px;
-}
-
