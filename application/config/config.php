@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url']    = "$root";
 
 
-$config['base_url'] = 'http://localhost/bestanvet/';
+$config['base_url'] = 'http://localhost/zolid_kpi/';
 
 /*
 |--------------------------------------------------------------------------

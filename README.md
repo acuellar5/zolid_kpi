@@ -1,2 +1,0 @@
-#zolid_kpi
-

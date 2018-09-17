@@ -7,18 +7,14 @@
 		<!-- STYLES HEADER FOOTER  -->
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_footer.css'); ?>">
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_header.css'); ?>">
-		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style_person.css'); ?>">
 		<!-- BOOTSTRAP -->
 		<link rel="stylesheet" href="<?= base_url('assets/plugins/Bootstrap/css/bootstrap3.3.7.min.css'); ?>">
-		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		 <!-- STYLES DATATABLES CAMILO -->
-  		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/datatables_camilo.css'); ?>">
 		<!-- STYLES MODULES PRINCIPAL ADMIN -->
 		<?php if ($this->uri->segment(1) == 'principal'): ?>
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_principal_administrative.css'); ?>">
 		<?php endif ?>
 		<!--   ICONO PAGINA    -->
-		<link rel="icon" href="<?= base_url('assets/images/BestandVET.png'); ?>">
+		<link rel="icon" href="<?= base_url('assets/images/title_icon.png'); ?>">
 		<!-- CSS BUTTONS_PERSON -->
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/styles_modulo_person.css?v=2') ?>">
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/algo.css'); ?>">
@@ -32,7 +28,7 @@
 				<div class="container-fluid menu_nav_header">
 					<div class="navbar-header">
 						<a class="navbar-brand" href="#">
-							<img class="logoNav" src="<?= base_url(); ?>assets/images/BestandVET.png" style="margin-top: -28%;">
+							<img class="logoNav" src="<?= base_url(); ?>assets/images/logoNav.png">
 						</a>
 					</div>
 					<ul class="nav navbar-nav">
@@ -47,4 +43,4 @@
 				</div>
 			</nav>
 		</div>
-		<div class="container" style="min-height: 516px;">
+		<div class="container">

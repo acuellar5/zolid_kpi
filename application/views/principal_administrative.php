@@ -9,6 +9,8 @@
 						<p>Registrar</p>
 						<p>Modificar</p>
 						<p>Desactivar</p>
+						<p>Asignación de KPI'S</p>
+						<p>Inasistencia</p>
 						<p>Informes</p>
 						<a href="#">View more</a>
 						<p></p>
@@ -20,7 +22,7 @@
 				<figure class="effect-oscar">
 						<img src="<?= base_url('assets/images/project.jpg') ?>" />
 					<figcaption>
-						<h2><?= $this->lang->line('principal_module')?> <span>PRODUCTOS</span></h2><br>
+						<h2><?= $this->lang->line('principal_module')?> <span>Proyecto</span></h2><br>
 						<p>Registrar</p>
 						<p>Modificar</p>
 						<p>Desactivar</p>
@@ -32,8 +34,11 @@
 				<figure class="effect-oscar">
 					<img src="<?= base_url('assets/images/Kpi1 (Copiar).jpg') ?>" />
 					<figcaption>
-						<h2><?= $this->lang->line('principal_module')?>  <br><span>VENTAS</span></h2><br>
+						<h2><?= $this->lang->line('principal_module')?>  <br><span>KPI'S</span></h2><br>
 						<p>Registrar</p>
+						<p>Modificar</p>
+						<p>Desactivar</p>
+						<p>Ventana de tiempo</p>
 						<p>Informes</p>
 						<a href="#">View more</a>
 					</figcaption>			

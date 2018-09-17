@@ -2,9 +2,9 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>LOGIN BESTANDVET</title>
+    <title>LOGIN ZOLID</title>
     <!-- ICONO PAGINA -->
-    <link rel="icon" href="<?= base_url('assets/images/BestandVET.png'); ?>">
+    <link rel="icon" href="http://cellaron.com/media/wysiwyg/zte-mwc-2015-8-l-124x124.png">
     <!-- ANIMACION LOGIN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <!-- CSS ESTILOS LOGIN -->
@@ -25,7 +25,7 @@
       <form id="formu" method="post">
         <div class="admin">
           <div class="rota">
-            <h1>BESTAND</h1>
+            <h1>ZOLID</h1>
             <input id="username" type="text" name="username" value="" placeholder="Username" required/><br/>
             <input id="password" type="password" name="password" value="" placeholder="Password" required/>            
               <div class="form_radio">
@@ -41,9 +41,9 @@
         </div>
         <div class="cms">
           <div class="roti">
-            <h1>VET</h1>
+            <h1>ZTE</h1>
             <button type="submit" class="button" id="valid" name="valid" onclick = "this.form.action = '<?php echo base_url();?>principal'">Login</button><br />
-            
+            <p><a href="#">ZTE</a> <a>And</a> <a href="#">ZTE Colombia</a></p>
           </div>
         </div>
       </form>
